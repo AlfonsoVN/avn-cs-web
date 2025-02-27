@@ -1,0 +1,105 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  </head>
+  <!-- Barra de navegación -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://beeimg.com/images/s79397782721.png" alt="AVN Cybernet Solutions" class="escudo"/>
+      <img src="https://beeimg.com/images/x80095686682.png" alt="AVN Cybernet Solutions" class="titulo"/>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+          <li><a href="/chatbot">Chatbot</a></li>
+          <li><a href="/news">Noticias</a></li>
+      </ul>
+    </nav>
+    <div class="navbar-actions">
+      <!-- Campo de búsqueda -->
+      <div class="search">
+        <input type="text" placeholder="Buscar..." />
+        <button class="search-btn"><i class="fa fa-search"></i></button>
+      </div>
+  
+      <!-- Selector de idioma -->
+      <select class="language-selector">
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+      </select>
+    </div>
+  </header>
+  
+  <body>
+    <main>
+      <section class="banner_home">
+        <img src="https://beeimg.com/images/a28509925214.jpg" alt="Imagen representativa de ciberseguridad" />
+        <div class="banner_texto">
+          <h1><span class="avm-red">AVN</span> Next-Gen Protection</h1>
+          <h2>Protect what matters</h2>
+        </div>
+      </section>
+  
+      <section class="contenido">
+        <div class="texto-contenedor">
+          <h1>Bienvenido a AVN Cybernet Solutions</h1>
+            <p>
+                En un mundo donde las amenazas digitales evolucionan constantemente, <strong>AVN Cybernet Solutions</strong> se posiciona como un líder en <strong>ciberseguridad y soluciones tecnológicas avanzadas</strong>. Nuestra misión es <strong>proteger la integridad y confidencialidad de la información</strong> de empresas y organizaciones a través de estrategias innovadoras, auditorías de seguridad, monitoreo proactivo y respuesta ante incidentes.
+            </p>
+            <p>
+                Sabemos que la seguridad digital va más allá de la tecnología: requiere estrategia, prevención y soluciones personalizadas. Por ello, trabajamos estrechamente con cada cliente para diseñar <strong>protecciones adaptadas a su entorno digital</strong>. <strong>Confíe en AVN Cybernet Solutions</strong> para fortalecer su ciberseguridad y garantizar la continuidad de su negocio en un mundo digital en constante cambio.
+            </p>
+        </div>
+  
+        <div class="video-contenedor">
+          <!-- Contenedor con miniatura y el botón de play centrado -->
+          <div class="yt-mix-bg" role="button" tabindex="0" aria-label="Play Click to play video" onclick="playVideo()">
+            <div class="yt-play"></div>
+          </div>
+          <iframe id="videoIframe" width="560" height="315" style="display:none;" 
+            src="https://www.youtube.com/embed/KlwglLNfAA0?modestbranding=1&showinfo=0&rel=0&controls=1&autohide=1" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+    </section>
+  
+    <section class="info-container">
+      <div class="info-secciones">
+        <!-- Primera Sección -->
+        <div class="info-box">
+          <i class="fas fa-tools"></i>
+          <h3>Soluciones Avanzadas para una Protección Integral</h3>
+          <p>Implementamos herramientas y paquetes de seguridad diseñados para mitigar riesgos y fortalecer la defensa digital.</p>
+        </div>
+    
+         <!-- Línea separadora -->
+        <div class="separator"></div>
+  
+        <!-- Segunda Sección -->
+        <div class="info-box">
+          <i class="fas fa-user-shield"></i>
+          <h3>Equipo Especializado en Ciberseguridad y Formación</h3>
+          <p>Contamos con expertos, formadores y analistas de seguridad para garantizar la protección de tu infraestructura digital.</p>
+        </div>
+      </div>
+    </section> 
+    
+    <script>
+      // Función para reproducir el video al hacer clic en la miniatura
+      function playVideo() {
+          var iframe = document.getElementById("videoIframe");
+          var videoContainer = document.querySelector(".yt-mix-bg");
+          
+          videoContainer.style.display = "none"; // Ocultar la miniatura
+          iframe.style.display = "block";  // Mostrar el iframe del video
+          
+          // Verifica que el video ya tiene el autoplay
+          var iframeSrc = iframe.src;
+          if (!iframeSrc.includes("autoplay=1")) {
+              iframe.src = iframeSrc + "&autoplay=1";  // Iniciar la reproducción del video
+          }
+      }
+    </script>
+    </main>
+  </body>

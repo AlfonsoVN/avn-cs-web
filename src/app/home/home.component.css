@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Montaser&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+/* Elimina el margen y padding por defecto en el body y html */
+* {
+  font-family: 'Montaser', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Montaser', sans-serif;
+  color: white;
+  overflow-x: hidden; /* Evita cualquier desplazamiento horizontal */
+}
+
+
+/* Barra de Navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #00005c; /* Azul oscuro */
+  color: white;
+  position: fixed; /* Mantiene la barra de navegación fija en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+  z-index: 1000; /* Asegura que la barra quede encima de otros elementos */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+/* Logo y enlaces */
+.navbar .logo a {
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  gap: 3px;
+}
+
+
+
+/* Para que las imágenes dentro del logo también tengan transición */
+.logo img {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto de rebote suave en imágenes al hacer hover */
+.logo:hover img {
+  transform: scale(1.1);
+}
+
+.navbar nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s ease-in-out; /* Suaviza el cambio de color */
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar nav ul li a:hover {
+  color: #3dc7ff; /* Rojo elegante */
+}
+
+.navbar nav ul li a::after {
+  content: ""; /* Elemento visual */
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #3dc7ff; /* Rojo elegante */
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.navbar nav ul li a:hover::after {
+  width: 100%;
+}
+
+.search input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-btn {
+  padding: 8px 12px;
+  border: none;
+  background-color: #555;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #777;
+}
+
+.search-btn i {
+  font-size: 18px;
+}
+
+.language-selector {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+
+
+/* Estilos para la imagen principal */
+.escudo {
+  height: 40px; /* Ajusta la altura según desees */
+  width: auto;  /* Mantiene la proporción de la imagen */
+  margin-left: 10px;
+  margin-right: 8px;
+}
+
+/* Estilos para la imagen secundaria */
+.titulo {
+  height: 40px; /* Ajusta el tamaño de la imagen secundaria */
+  width: auto;
+}
+
+/* Banner de imagen de ancho completo justo debajo del navbar */
+/* Imagen de ancho completo */
+.banner_home {
+  width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+}
+
+.banner_home img {
+  width: 100%; /* Ocupar todo el ancho de la ventana */
+  height: auto;
+  display: block;
+}
+
+.banner_texto {
+  position: absolute;
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-110%, -80%); /* Usa translate para centrar ambos ejes */
+  color: #e1e1e1; /* Color claro para el texto */
+  font-size: 36px; /* Tamaño moderado */
+  font-weight: 700; /* Fuente negrita */
+  text-align: center; /* Centra el texto */
+  padding: 20px 40px;
+  border-radius: 15px; /* Bordes redondeados para suavizar la caja de texto */
+  max-width: 60%; /* Ancho máximo del texto */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente para hacer contraste */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); /* Sombra sutil */
+}
+
+.banner_texto h1 {
+  color: #fff; /* Blanco para el texto principal */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Sombra sutil para darle profundidad */
+  font-size: 60px; /* Ajustamos el tamaño para darle protagonismo */
+  font-weight: 800; /* Negrita para mayor impacto */
+  letter-spacing: 1px; /* Ligero espaciado entre letras */
+  margin-bottom: 15px; /* Espacio entre el h1 y h2 */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.banner_texto h2 {
+  font-size: 35px; /* Ajustamos el tamaño para el subtítulo */
+  font-weight: 400; /* Normal para el subtítulo */
+  color: #f39c12; /* Gris claro */
+  letter-spacing: 1px;
+  opacity: 0.8;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Cambio de color al pasar el cursor por encima */
+.banner_texto:hover h1 {
+  color: #3dc7ff; /* Rojo elegante para resaltar */
+  text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.9); /* Sombra más intensa */
+  transform: translateY(-5px); /* Desplazamiento suave hacia arriba */
+}
+
+.banner_texto h1 .avm-red {
+  font-family: 'Archivo Black', sans-serif;
+  color: #3dc7ff; /* Rojo brillante para "AVN" */
+}
+
+.banner_texto h1:hover .avm-red {
+  color: #fff; /* Rojo cambia a blanco cuando se pasa el cursor */
+}
+
+.contenido {
+  display: flex; /* Usamos flexbox para alinear los elementos horizontalmente */
+  max-width: 1100px; /* Controla el ancho del contenido */
+  margin: 50px auto; /* Centra el contenido en la pantalla con margen superior e inferior */
+  padding: 20px;
+  color: #00005c; /* Color corporativo para el texto */
+  font-family: 'Montaser', sans-serif; /* Fuente moderna */
+  gap: 60px; /* Espacio entre el texto y el video */
+  margin-top: 100px;
+  margin-left: 30px; /* Margen izquierdo para dar espacio */
+  margin-right: 20px; /* Margen derecho para dar espacio */
+  justify-content: flex-start; /* Alinea al principio, a la izquierda */
+}
+
+
+
+.texto-contenedor {
+  max-width: 800px; /* Limita el ancho del bloque de texto */
+  
+}
+
+.texto-contenedor h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-left: 5px solid #00005c; /* Línea decorativa a la izquierda */
+  padding-left: 15px;
+  color: #00005c;
+}
+
+.texto-contenedor p {
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.texto-contenedor p strong {
+  color: #f39c12; /* Resalta palabras clave en rojo */
+  font-weight: 600;
+}
+
+.video-contenedor {
+  flex-shrink: 0; /* Evita que el video se reduzca si el contenedor es pequeño */
+}
+
+.video-contenedor {
+  position: relative;
+  display: inline-block;
+}
+
+.yt-mix-bg {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  background-image: url("https://atos.net/wp-content/uploads/2024/05/advancing-what-matters-video-thumb.jpg"); /* Imagen estática */
+  background-size: cover;
+  width: 560px;
+  height: 315px;
+  border-radius: 10px;
+  background-position: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.4); /* Agrega una sombra sutil */
+}
+
+.yt-play {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.yt-play::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;  /* Sin color arriba */
+  border-bottom: 15px solid transparent; /* Sin color abajo */
+  border-left: 30px solid #333; /* El color del triángulo hacia la derecha */
+  display: inline-block;
+  position: absolute;
+  right: 23px; /* Ajustamos para centrar el triángulo */
+}
+
+.yt-play:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#videoIframe {
+  display: none;
+  border-radius: 10px;
+}
+
+/* Contenedor principal con fondo azul */
+.info-container {
+  background-color: #00005c; /* Fondo azul corporativo */
+  padding: 100px 5%; /* Espacio alrededor */
+  display: flex;
+  justify-content: center;
+}
+
+.info-secciones {
+  display: flex;
+  gap: 120px; /* Más separación horizontal */
+  max-width: 1500px; /* Más ancho */
+  width: 100%;
+  align-items: flex-start;
+}
+
+.info-box {
+  flex: 1;
+  text-align: left; /* Alineación a la izquierda para mejor lectura */
+  color: white;
+  margin: 0px;
+}
+
+.info-box i {
+  color: #f39c12; /* Color rojo para el icono */
+  font-size: 75px; /* Tamaño del icono */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Transición suave */
+  margin-bottom: 10px;
+}
+
+/* Opcional: cambia la sombra cuando el icono es hover */
+.info-box i:hover {
+  color: #fff; /* Cambiar a blanco en hover */
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7); /* Sombra más intensa */
+  transform: translateY(-5px); /* Eleva el icono al hacer hover */
+}
+
+.info-box h3 {
+  font-size: 40px; /* Título más grande */
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #3dc7ff;
+}
+
+.info-box p {
+  font-size: 24px; /* Texto más grande */
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.separator{
+  width: 5px; /* Grosor de la línea */
+  height: 110%; /* Asegura que la línea tenga la altura completa del contenedor */
+  background: linear-gradient(to bottom, #f39c12, #3498db, white); /* Gradiente de colores */
+  top: -20%;
+}
+

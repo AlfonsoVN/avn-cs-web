@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Montaser&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+/* Elimina el margen y padding por defecto en el body y html */
+* {
+  font-family: 'Montaser', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Montaser', sans-serif;
+  color: white;
+  overflow-x: hidden; /* Evita cualquier desplazamiento horizontal */
+}
+
+
+/* Barra de Navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #00005c; /* Azul oscuro */
+  color: white;
+  position: fixed; /* Mantiene la barra de navegación fija en la parte superior */
+  top: 0;
+  left: 0;
+  width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+  z-index: 1000; /* Asegura que la barra quede encima de otros elementos */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+/* Logo y enlaces */
+.navbar .logo a {
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  gap: 3px;
+}
+
+
+
+/* Para que las imágenes dentro del logo también tengan transición */
+.logo img {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto de rebote suave en imágenes al hacer hover */
+.logo:hover img {
+  transform: scale(1.1);
+}
+
+.navbar nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+  transition: color 0.3s ease-in-out; /* Suaviza el cambio de color */
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar nav ul li a:hover {
+  color: #3dc7ff; /* Rojo elegante */
+}
+
+.navbar nav ul li a::after {
+  content: ""; /* Elemento visual */
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: #3dc7ff; /* Rojo elegante */
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.navbar nav ul li a:hover::after {
+  width: 100%;
+}
+
+.search input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-btn {
+  padding: 8px 12px;
+  border: none;
+  background-color: #555;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-btn:hover {
+  background-color: #777;
+}
+
+.search-btn i {
+  font-size: 18px;
+}
+
+.language-selector {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+
+
+/* Estilos para la imagen principal */
+.escudo {
+  height: 40px; /* Ajusta la altura según desees */
+  width: auto;  /* Mantiene la proporción de la imagen */
+  margin-left: 10px;
+  margin-right: 8px;
+}
+
+/* Estilos para la imagen secundaria */
+.titulo {
+  height: 40px; /* Ajusta el tamaño de la imagen secundaria */
+  width: auto;
+}
+
+
+.chat-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .chat-message {
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+  
+  .user {
+    background-color: #d1e7fd;
+    text-align: right;
+  }
+  
+  .bot {
+    background-color: #f1f1f1;
+  }
+  

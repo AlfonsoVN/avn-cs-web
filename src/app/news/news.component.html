@@ -1,0 +1,46 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  </head>
+  <!-- Barra de navegación -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://beeimg.com/images/s79397782721.png" alt="AVN Cybernet Solutions" class="escudo"/>
+      <img src="https://beeimg.com/images/x80095686682.png" alt="AVN Cybernet Solutions" class="titulo"/>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="/">Inicio</a></li>
+          <li><a href="/chatbot">Chatbot</a></li>
+          <li><a href="/news">Noticias</a></li>
+      </ul>
+    </nav>
+    <div class="navbar-actions">
+      <!-- Campo de búsqueda -->
+      <div class="search">
+        <input type="text" placeholder="Buscar..." />
+        <button class="search-btn"><i class="fa fa-search"></i></button>
+      </div>
+  
+      <!-- Selector de idioma -->
+      <select class="language-selector">
+        <option value="en">EN</option>
+        <option value="es">ES</option>
+      </select>
+    </div>
+  </header>
+
+  <body>
+    <h2>Últimas noticias de Ciberseguridad</h2>
+
+    <div *ngIf="newsArticles.length > 0; else loading">
+    <div *ngFor="let article of newsArticles" class="news-card">
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.description }}</p>
+        <a [href]="article.url" target="_blank">Leer más</a>
+    </div>
+    </div>
+
+    <ng-template #loading>
+    <p>Cargando noticias...</p>
+    </ng-template>
+    </body>
