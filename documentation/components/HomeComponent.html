@@ -1,0 +1,427 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>avn-cs-web documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">avn-cs-web documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  HomeComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/home/home.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-home</code></td>
+            </tr>
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./home.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./home.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-home&#x27;,
+  standalone: false,
+  templateUrl: &#x27;./home.component.html&#x27;,
+  styleUrl: &#x27;./home.component.css&#x27;
+})
+export class HomeComponent {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;head&gt;
+    &lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;!-- Barra de navegación --&gt;
+  &lt;header class&#x3D;&quot;navbar&quot;&gt;
+    &lt;div class&#x3D;&quot;logo&quot;&gt;
+      &lt;img src&#x3D;&quot;https://beeimg.com/images/s79397782721.png&quot; alt&#x3D;&quot;AVN Cybernet Solutions&quot; class&#x3D;&quot;escudo&quot;/&gt;
+      &lt;img src&#x3D;&quot;https://beeimg.com/images/x80095686682.png&quot; alt&#x3D;&quot;AVN Cybernet Solutions&quot; class&#x3D;&quot;titulo&quot;/&gt;
+    &lt;/div&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;!-- Reemplaza href con routerLink para navegación interna --&gt;
+        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/chatbot&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Chatbot&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a routerLink&#x3D;&quot;/news&quot; routerLinkActive&#x3D;&quot;active&quot;&gt;Noticias&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;div class&#x3D;&quot;navbar-actions&quot;&gt;
+      &lt;!-- Campo de búsqueda --&gt;
+      &lt;div class&#x3D;&quot;search&quot;&gt;
+        &lt;input type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Buscar...&quot; /&gt;
+        &lt;button class&#x3D;&quot;search-btn&quot;&gt;&lt;i class&#x3D;&quot;fa fa-search&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+      &lt;/div&gt;
+  
+      &lt;!-- Selector de idioma --&gt;
+      &lt;select class&#x3D;&quot;language-selector&quot;&gt;
+        &lt;option value&#x3D;&quot;en&quot;&gt;EN&lt;/option&gt;
+        &lt;option value&#x3D;&quot;es&quot;&gt;ES&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  
+  &lt;body&gt;
+    &lt;main&gt;
+      &lt;section class&#x3D;&quot;banner_home&quot;&gt;
+        &lt;img src&#x3D;&quot;https://beeimg.com/images/a28509925214.jpg&quot; alt&#x3D;&quot;Imagen representativa de ciberseguridad&quot; /&gt;
+        &lt;div class&#x3D;&quot;banner_texto&quot;&gt;
+          &lt;h1&gt;&lt;span class&#x3D;&quot;avm-red&quot;&gt;AVN&lt;/span&gt; Next-Gen Protection&lt;/h1&gt;
+          &lt;h2&gt;Protect what matters&lt;/h2&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+  
+      &lt;section class&#x3D;&quot;contenido&quot;&gt;
+        &lt;div class&#x3D;&quot;texto-contenedor&quot;&gt;
+          &lt;h1&gt;Bienvenido a AVN Cybernet Solutions&lt;/h1&gt;
+            &lt;p&gt;
+                En un mundo donde las amenazas digitales evolucionan constantemente, &lt;strong&gt;AVN Cybernet Solutions&lt;/strong&gt; se posiciona como un líder en &lt;strong&gt;ciberseguridad y soluciones tecnológicas avanzadas&lt;/strong&gt;. Nuestra misión es &lt;strong&gt;proteger la integridad y confidencialidad de la información&lt;/strong&gt; de empresas y organizaciones a través de estrategias innovadoras, auditorías de seguridad, monitoreo proactivo y respuesta ante incidentes.
+            &lt;/p&gt;
+            &lt;p&gt;
+                Sabemos que la seguridad digital va más allá de la tecnología: requiere estrategia, prevención y soluciones personalizadas. Por ello, trabajamos estrechamente con cada cliente para diseñar &lt;strong&gt;protecciones adaptadas a su entorno digital&lt;/strong&gt;. &lt;strong&gt;Confíe en AVN Cybernet Solutions&lt;/strong&gt; para fortalecer su ciberseguridad y garantizar la continuidad de su negocio en un mundo digital en constante cambio.
+            &lt;/p&gt;
+        &lt;/div&gt;
+  
+        &lt;div class&#x3D;&quot;video-contenedor&quot;&gt;
+          &lt;!-- Contenedor con miniatura y el botón de play centrado --&gt;
+          &lt;div class&#x3D;&quot;yt-mix-bg&quot; role&#x3D;&quot;button&quot; tabindex&#x3D;&quot;0&quot; aria-label&#x3D;&quot;Play Click to play video&quot; onclick&#x3D;&quot;playVideo()&quot;&gt;
+            &lt;div class&#x3D;&quot;yt-play&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;iframe id&#x3D;&quot;videoIframe&quot; width&#x3D;&quot;560&quot; height&#x3D;&quot;315&quot; style&#x3D;&quot;display:none;&quot; 
+            src&#x3D;&quot;https://www.youtube.com/embed/KlwglLNfAA0?modestbranding&#x3D;1&amp;showinfo&#x3D;0&amp;rel&#x3D;0&amp;controls&#x3D;1&amp;autohide&#x3D;1&quot; 
+            frameborder&#x3D;&quot;0&quot; 
+            allow&#x3D;&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+            allowfullscreen&gt;
+          &lt;/iframe&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+  
+    &lt;section class&#x3D;&quot;info-container&quot;&gt;
+      &lt;div class&#x3D;&quot;info-secciones&quot;&gt;
+        &lt;!-- Primera Sección --&gt;
+        &lt;div class&#x3D;&quot;info-box&quot;&gt;
+          &lt;i class&#x3D;&quot;fas fa-tools&quot;&gt;&lt;/i&gt;
+          &lt;h3&gt;Soluciones Avanzadas para una Protección Integral&lt;/h3&gt;
+          &lt;p&gt;Implementamos herramientas y paquetes de seguridad diseñados para mitigar riesgos y fortalecer la defensa digital.&lt;/p&gt;
+        &lt;/div&gt;
+    
+         &lt;!-- Línea separadora --&gt;
+        &lt;div class&#x3D;&quot;separator&quot;&gt;&lt;/div&gt;
+  
+        &lt;!-- Segunda Sección --&gt;
+        &lt;div class&#x3D;&quot;info-box&quot;&gt;
+          &lt;i class&#x3D;&quot;fas fa-user-shield&quot;&gt;&lt;/i&gt;
+          &lt;h3&gt;Equipo Especializado en Ciberseguridad y Formación&lt;/h3&gt;
+          &lt;p&gt;Contamos con expertos, formadores y analistas de seguridad para garantizar la protección de tu infraestructura digital.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt; 
+    
+    &lt;script&gt;
+      // Función para reproducir el video al hacer clic en la miniatura
+      function playVideo() {
+          var iframe &#x3D; document.getElementById(&quot;videoIframe&quot;);
+          var videoContainer &#x3D; document.querySelector(&quot;.yt-mix-bg&quot;);
+          
+          videoContainer.style.display &#x3D; &quot;none&quot;; // Ocultar la miniatura
+          iframe.style.display &#x3D; &quot;block&quot;;  // Mostrar el iframe del video
+          
+          // Verifica que el video ya tiene el autoplay
+          var iframeSrc &#x3D; iframe.src;
+          if (!iframeSrc.includes(&quot;autoplay&#x3D;1&quot;)) {
+              iframe.src &#x3D; iframeSrc + &quot;&amp;autoplay&#x3D;1&quot;;  // Iniciar la reproducción del video
+          }
+      }
+    &lt;/script&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><head>    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">  </head>  <!-- Barra de navegación -->  <header class="navbar">    <div class="logo">      <img src="https://beeimg.com/images/s79397782721.png" alt="AVN Cybernet Solutions" class="escudo"/>      <img src="https://beeimg.com/images/x80095686682.png" alt="AVN Cybernet Solutions" class="titulo"/>    </div>    <nav>      <ul>        <!-- Reemplaza href con routerLink para navegación interna -->        <li><a routerLink="/" routerLinkActive="active">Inicio</a></li>        <li><a routerLink="/chatbot" routerLinkActive="active">Chatbot</a></li>        <li><a routerLink="/news" routerLinkActive="active">Noticias</a></li>      </ul>    </nav>    <div class="navbar-actions">      <!-- Campo de búsqueda -->      <div class="search">        <input type="text" placeholder="Buscar..." />        <button class="search-btn"><i class="fa fa-search"></i></button>      </div>        <!-- Selector de idioma -->      <select class="language-selector">        <option value="en">EN</option>        <option value="es">ES</option>      </select>    </div>  </header>    <body>    <main>      <section class="banner_home">        <img src="https://beeimg.com/images/a28509925214.jpg" alt="Imagen representativa de ciberseguridad" />        <div class="banner_texto">          <h1><span class="avm-red">AVN</span> Next-Gen Protection</h1>          <h2>Protect what matters</h2>        </div>      </section>        <section class="contenido">        <div class="texto-contenedor">          <h1>Bienvenido a AVN Cybernet Solutions</h1>            <p>                En un mundo donde las amenazas digitales evolucionan constantemente, <strong>AVN Cybernet Solutions</strong> se posiciona como un líder en <strong>ciberseguridad y soluciones tecnológicas avanzadas</strong>. Nuestra misión es <strong>proteger la integridad y confidencialidad de la información</strong> de empresas y organizaciones a través de estrategias innovadoras, auditorías de seguridad, monitoreo proactivo y respuesta ante incidentes.            </p>            <p>                Sabemos que la seguridad digital va más allá de la tecnología: requiere estrategia, prevención y soluciones personalizadas. Por ello, trabajamos estrechamente con cada cliente para diseñar <strong>protecciones adaptadas a su entorno digital</strong>. <strong>Confíe en AVN Cybernet Solutions</strong> para fortalecer su ciberseguridad y garantizar la continuidad de su negocio en un mundo digital en constante cambio.            </p>        </div>          <div class="video-contenedor">          <!-- Contenedor con miniatura y el botón de play centrado -->          <div class="yt-mix-bg" role="button" tabindex="0" aria-label="Play Click to play video" onclick="playVideo()">            <div class="yt-play"></div>          </div>          <iframe id="videoIframe" width="560" height="315" style="display:none;"             src="https://www.youtube.com/embed/KlwglLNfAA0?modestbranding=1&showinfo=0&rel=0&controls=1&autohide=1"             frameborder="0"             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"             allowfullscreen>          </iframe>        </div>    </section>      <section class="info-container">      <div class="info-secciones">        <!-- Primera Sección -->        <div class="info-box">          <i class="fas fa-tools"></i>          <h3>Soluciones Avanzadas para una Protección Integral</h3>          <p>Implementamos herramientas y paquetes de seguridad diseñados para mitigar riesgos y fortalecer la defensa digital.</p>        </div>             <!-- Línea separadora -->        <div class="separator"></div>          <!-- Segunda Sección -->        <div class="info-box">          <i class="fas fa-user-shield"></i>          <h3>Equipo Especializado en Ciberseguridad y Formación</h3>          <p>Contamos con expertos, formadores y analistas de seguridad para garantizar la protección de tu infraestructura digital.</p>        </div>      </div>    </section>         <script>      // Función para reproducir el video al hacer clic en la miniatura      function playVideo() {          var iframe = document.getElementById("videoIframe");          var videoContainer = document.querySelector(".yt-mix-bg");                    videoContainer.style.display = "none"; // Ocultar la miniatura          iframe.style.display = "block";  // Mostrar el iframe del video                    // Verifica que el video ya tiene el autoplay          var iframeSrc = iframe.src;          if (!iframeSrc.includes("autoplay=1")) {              iframe.src = iframeSrc + "&autoplay=1";  // Iniciar la reproducción del video          }      }    </script>    </main>  </body></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChatbotComponent', 'selector': 'app-chatbot'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NewsComponent', 'selector': 'app-news'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'HomeComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'HomeComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
