@@ -86,7 +86,7 @@ html, body {
 }
 
 .navbar nav ul li a:hover {
-  color: #3dc7ff; /* Rojo elegante */
+  color: #3dc7ff; 
 }
 
 .navbar nav ul li a::after {
@@ -96,13 +96,19 @@ html, body {
   bottom: -3px;
   width: 0;
   height: 2px;
-  background-color: #3dc7ff; /* Rojo elegante */
+  background-color: #3dc7ff; 
   transition: all 0.3s ease-in-out;
   transform: translateX(-50%);
 }
 
 .navbar nav ul li a:hover::after {
   width: 100%;
+}
+
+.search {
+  display: flex;
+  align-items: center; /* Esto asegura que el input y el botón estén alineados */
+  gap: 0; /* Elimina cualquier espacio entre los elementos dentro de .search */
 }
 
 /* Estilos para el campo de búsqueda */
@@ -114,6 +120,7 @@ html, body {
   font-size: 14px;
   width: 200px;
   transition: all 0.3s ease;
+  margin-right: 0;
 }
 
 .search input:focus {
@@ -130,10 +137,11 @@ html, body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 16px;
+  margin-left: 0;
 }
 
 .search-btn:hover {
-  background-color: #0056b3; /* Cambia el color a un azul más oscuro */
+  background-color: #f39c12; /* Cambia el color a un azul más oscuro */
 }
 
 .search-btn i {
