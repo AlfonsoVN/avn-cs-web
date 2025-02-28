@@ -10,6 +10,10 @@ import { GrokService } from '../services/grok.service';
 export class ChatbotComponent {
   userMessage: string = '';
   chatHistory: { sender: string, message: string }[] = [];
+  name: string = '';
+  email: string = '';
+  phone: string = '';
+  message: string = '';
 
   constructor(private grokService: GrokService) {}
 
@@ -27,6 +31,22 @@ export class ChatbotComponent {
     });
 
     this.userMessage = ''; // Limpiar el input
+  }
+
+  // Método para manejar el envío del formulario
+  submitForm(): void {
+    // Aquí puedes manejar los datos del formulario como desees
+    console.log('Formulario enviado');
+    console.log('Nombre:', this.name);
+    console.log('Correo Electrónico:', this.email);
+    console.log('Número de Teléfono:', this.phone);
+    console.log('Mensaje:', this.message);
+
+    // Si quieres, puedes limpiar los campos después de enviarlo
+    this.name = '';
+    this.email = '';
+    this.phone = '';
+    this.message = '';
   }
 
 }

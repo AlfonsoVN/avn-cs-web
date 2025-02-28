@@ -9,9 +9,10 @@
     </div>
     <nav>
       <ul>
-        <li><a href="/">Inicio</a></li>
-          <li><a href="/chatbot">Chatbot</a></li>
-          <li><a href="/news">Noticias</a></li>
+        <!-- Reemplaza href con routerLink para navegación interna -->
+        <li><a routerLink="/" routerLinkActive="active">Inicio</a></li>
+        <li><a routerLink="/chatbot" routerLinkActive="active">Chatbot</a></li>
+        <li><a routerLink="/news" routerLinkActive="active">Noticias</a></li>
       </ul>
     </nav>
     <div class="navbar-actions">
@@ -33,14 +34,17 @@
     <h2>Últimas noticias de Ciberseguridad</h2>
 
     <div *ngIf="newsArticles.length > 0; else loading">
-    <div *ngFor="let article of newsArticles" class="news-card">
-        <h3>{{ article.title }}</h3>
-        <p>{{ article.description }}</p>
-        <a [href]="article.url" target="_blank">Leer más</a>
+      <div *ngFor="let article of newsArticles" class="news-card">
+        <div class="news-card-header">
+          <h3>{{ article.title }}</h3>
+          <span class="news-date">{{ article.publishedAt | date: 'dd MMM yyyy' }}</span>
+        </div>
+        <p class="news-description">{{ article.description }}</p>
+        <a [href]="article.url" target="_blank" class="read-more">Leer más</a>
+      </div>
     </div>
-    </div>
-
     <ng-template #loading>
-    <p>Cargando noticias...</p>
+      <p>Cargando noticias...</p>
     </ng-template>
+    
     </body>

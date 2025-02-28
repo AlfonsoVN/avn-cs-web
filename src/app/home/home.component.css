@@ -65,7 +65,7 @@ html, body {
 .navbar nav ul {
   list-style-type: none;
   display: flex;
-  gap: 20px;
+  gap: 40px;
 }
 
 .navbar nav ul li a {
@@ -102,34 +102,56 @@ html, body {
   width: 100%;
 }
 
+/* Estilos para el campo de búsqueda */
 .search input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 25px; /* Bordes redondeados para un estilo moderno */
+  background-color: #f5f5f5;
+  font-size: 14px;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.search input:focus {
+  border-color: #3dc7ff; /* Borde azul al hacer foco */
+  background-color: white; /* Fondo blanco al enfocarse */
 }
 
 .search-btn {
-  padding: 8px 12px;
+  padding: 10px 15px;
   border: none;
-  background-color: #555;
+  background-color: #007bff; /* Color de fondo azul */
   color: white;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
 }
 
 .search-btn:hover {
-  background-color: #777;
+  background-color: #0056b3; /* Cambia el color a un azul más oscuro */
 }
 
 .search-btn i {
-  font-size: 18px;
+  font-size: 16px;
 }
 
+/* Estilos para el selector de idioma */
 .language-selector {
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: white;
+  padding: 8px 15px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.language-selector:focus {
+  outline: none;
+  border-color: #3dc7ff; /* Borde azul al hacer foco */
+  background-color: white; /* Fondo blanco al enfocarse */
 }
 
 
